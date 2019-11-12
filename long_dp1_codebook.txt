@@ -1,0 +1,550 @@
+--------------------------------------------------------------------------------
+Codebook for NHGIS data file 'long_dp1_*'
+--------------------------------------------------------------------------------
+ 
+Contents
+    - Data Description
+    - Data Summary
+    - Data Dictionary
+    - Citation and Use
+ 
+Additional documentation on NHGIS data sources is available at: 
+    https://www.nhgis.org/documentation/tabular-data 
+
+--------------------------------------------------------------------------------
+Data Description
+--------------------------------------------------------------------------------
+
+This data file contains the variables that are found in segment 1 of the 
+Census Bureau's 2010 Demonstration Data Product. The 2010 Demonstration Data 
+Product uses a differentially private algorithm to inject noise into the 2010
+decennial census data. This data file facilitates the comparison of the noise-
+injected data vs. the original 2010 decennial data.
+
+Technical documentation and raw data files for the 2010 Demonstration Product 
+can be found at https://www.census.gov/programs-surveys/decennial-census/2020-census/planning-management/2020-census-data-products/2010-demonstration-data-products.html
+
+Segment 1 of the demonstration product contains person variables. In particular,
+segment 1 contains variables from the following 2010 Summary File 1 tables:
+
+P1
+P2
+P3
+P4
+P5
+P6
+P7
+P12
+P13
+P14
+P15
+P16
+P18
+P19
+P20
+P22
+
+This data file is in a long format. Each record is a combination of a 
+geographic unit and a variable code. Each file has the same record 
+layout:
+
+gisjoin:     GIS Join Match Code
+name_dp:     Area Name-Legal/Statistical Area Description (LSAD) Term-Part Indicator from the 2010 Demonstration product
+var_code:    Variable code
+dp:          Variable value from the 2010 Demonstration product (the noise-injected value)
+name_sf:     Area Name-Legal/Statistical Area Description (LSAD) Term-Part Indicator from the 2010 Summary File 1
+sf:          Variable value from the 2010 Summary File 1 product
+
+IPUMS NHGIS staff created data files for 11 different geographic levels. File
+names and their meanings are:
+
+1. long_dp1_040.csv - State
+2. long_dp1_050.csv - County
+3. long_dp1_060.csv - County subdivision
+4. long_dp1_160.csv - Place
+5. long_dp1_230.csv - Alaska Native Regional Corporation 
+6. long_dp1_250.csv - American Indian/Alaska Native Area/Hawaiian Home Land
+7. long_dp1_310.csv - Core-based statistical area (CBSA)
+8. long_dp1_400.csv - Urban areas
+9. long_dp1_500.csv - 111th Congressional district 
+10. long_dp1_610.csv - State legislative district (upper chamber)
+11. long_dp1_620.csv - State legislative district (lower chamber)
+
+The remainder of this codebook describe the contents of each column and a 
+description of each var_code.
+  
+--------------------------------------------------------------------------------
+Data Summary
+--------------------------------------------------------------------------------
+ 
+Year:             2010
+Dataset:          2010 Census: SF 1a - P & H Tables [Blocks & Larger Areas]
+   NHGIS code:    2010_SF1a
+   NHGIS ID:      ds172
+Breakdown(s):     Geographic Subarea:
+                     Total area (00)
+ 
+Tables:
+ 
+1. Total Population
+   Universe:    Total population
+   Source code: P1
+   NHGIS code:  H7V
+ 
+2. Race
+   Universe:    Total population
+   Source code: P3
+   NHGIS code:  H7X
+ 
+3. Hispanic or Latino Origin
+   Universe:    Total population
+   Source code: P4
+   NHGIS code:  H7Y
+ 
+4. Hispanic or Latino Origin by Race
+   Universe:    Total population
+   Source code: P5
+   NHGIS code:  H7Z
+ 
+5. Race (Total Races Tallied)
+   Universe:    Total races tallied
+   Source code: P6
+   NHGIS code:  H70
+ 
+6. Hispanic or Latino Origin by Race (Total Races Tallied)
+   Universe:    Total races tallied
+   Source code: P7
+   NHGIS code:  H71
+ 
+7. Sex by Age
+   Universe:    Total population
+   Source code: P12
+   NHGIS code:  H76
+ 
+8. Median Age by Sex
+   Universe:    Total population
+   Source code: P13
+   NHGIS code:  H77
+ 
+9. Sex by Age for the Population Under 20 Years
+   Universe:    Population under 20 years
+   Source code: P14
+   NHGIS code:  H78
+ 
+10. Hispanic or Latino Origin of Householder by Race of Householder
+    Universe:    Households
+    Source code: P15
+    NHGIS code:  H79
+ 
+11. Population in Households by Age
+    Universe:    Population in households
+    Source code: P16
+    NHGIS code:  H8A
+ 
+12. Household Type
+    Universe:    Households
+    Source code: P18
+    NHGIS code:  H8C
+ 
+13. Household Size by Household Type by Presence of Own Children
+    Universe:    Households
+    Source code: P19
+    NHGIS code:  H8D
+ 
+14. Households by Presence of People Under 18 Years by Household Type by Age of People Under 18 Years
+    Universe:    Households
+    Source code: P20
+    NHGIS code:  H8E
+ 
+15. Household Type by Age of Householder
+    Universe:    Households
+    Source code: P22
+    NHGIS code:  H8G
+ 
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+ 
+Fields 
+        gisjoin:     GIS Join Match Code
+        name_dp:     Area Name-Legal/Statistical Area Description (LSAD) Term-Part Indicator from the 2010 Demonstration product
+        var_code:    Variable code
+        dp:          Variable value from the 2010 Demonstration product (the noise-injected value)
+        name_sf:     Area Name-Legal/Statistical Area Description (LSAD) Term-Part Indicator from the 2010 Summary File 1
+        sf:          Variable value from the 2010 Summary File 1 product
+
+Breakdown:
+    Geographic Subarea: Total area (00)
+ 
+    Table 1:     Total Population
+    Universe:    Total population
+    Source code: P1
+    NHGIS code:  H7V
+        H7V001:      Total
+ 
+    Table 2:     Race
+    Universe:    Total population
+    Source code: P3
+    NHGIS code:  H7X
+        H7X001:      Total
+        H7X002:      White alone
+        H7X003:      Black or African American alone
+        H7X004:      American Indian and Alaska Native alone
+        H7X005:      Asian alone
+        H7X006:      Native Hawaiian and Other Pacific Islander alone
+        H7X007:      Some Other Race alone
+        H7X008:      Two or More Races
+ 
+    Table 3:     Hispanic or Latino Origin
+    Universe:    Total population
+    Source code: P4
+    NHGIS code:  H7Y
+        H7Y001:      Total
+        H7Y002:      Not Hispanic or Latino
+        H7Y003:      Hispanic or Latino
+ 
+    Table 4:     Hispanic or Latino Origin by Race
+    Universe:    Total population
+    Source code: P5
+    NHGIS code:  H7Z
+        H7Z001:      Total
+        H7Z002:      Not Hispanic or Latino
+        H7Z003:      Not Hispanic or Latino: White alone
+        H7Z004:      Not Hispanic or Latino: Black or African American alone
+        H7Z005:      Not Hispanic or Latino: American Indian and Alaska Native alone
+        H7Z006:      Not Hispanic or Latino: Asian alone
+        H7Z007:      Not Hispanic or Latino: Native Hawaiian and Other Pacific Islander alone
+        H7Z008:      Not Hispanic or Latino: Some Other Race alone
+        H7Z009:      Not Hispanic or Latino: Two or More Races
+        H7Z010:      Hispanic or Latino
+        H7Z011:      Hispanic or Latino: White alone
+        H7Z012:      Hispanic or Latino: Black or African American alone
+        H7Z013:      Hispanic or Latino: American Indian and Alaska Native alone
+        H7Z014:      Hispanic or Latino: Asian alone
+        H7Z015:      Hispanic or Latino: Native Hawaiian and Other Pacific Islander alone
+        H7Z016:      Hispanic or Latino: Some Other Race alone
+        H7Z017:      Hispanic or Latino: Two or More Races
+ 
+    Table 5:     Race (Total Races Tallied)
+    Universe:    Total races tallied
+    Source code: P6
+    NHGIS code:  H70
+        H70001:      Total races tallied
+        H70002:      White alone or in combination with one or more other races
+        H70003:      Black or African American alone or in combination with one or more other races
+        H70004:      American Indian and Alaska Native alone or in combination with one or more other races
+        H70005:      Asian alone or in combination with one or more other races
+        H70006:      Native Hawaiian and Other Pacific Islander alone or in combination with one or more other races
+        H70007:      Some Other Race alone or in combination with one or more other races
+ 
+    Table 6:     Hispanic or Latino Origin by Race (Total Races Tallied)
+    Universe:    Total races tallied
+    Source code: P7
+    NHGIS code:  H71
+        H71001:      Total races tallied
+        H71002:      Not Hispanic or Latino
+        H71003:      Not Hispanic or Latino: White alone or in combination with one or more other races
+        H71004:      Not Hispanic or Latino: Black or African American alone or in combination with one or more other races
+        H71005:      Not Hispanic or Latino: American Indian and Alaska Native alone or in combination with one or more other races
+        H71006:      Not Hispanic or Latino: Asian alone or in combination with one or more other races
+        H71007:      Not Hispanic or Latino: Native Hawaiian and Other Pacific Islander alone or in combination with one or more other races
+        H71008:      Not Hispanic or Latino: Some Other Race alone or in combination with one or more other races
+        H71009:      Hispanic or Latino
+        H71010:      Hispanic or Latino: White alone or in combination with one or more other races
+        H71011:      Hispanic or Latino: Black or African American alone or in combination with one or more other races
+        H71012:      Hispanic or Latino: American Indian and Alaska Native alone or in combination with one or more other races
+        H71013:      Hispanic or Latino: Asian alone or in combination with one or more other races
+        H71014:      Hispanic or Latino: Native Hawaiian and Other Pacific Islander alone or in combination with one or more other races
+        H71015:      Hispanic or Latino: Some Other Race alone or in combination with one or more other races
+ 
+    Table 7:     Sex by Age
+    Universe:    Total population
+    Source code: P12
+    NHGIS code:  H76
+        H76001:      Total
+        H76002:      Male
+        H76003:      Male: Under 5 years
+        H76004:      Male: 5 to 9 years
+        H76005:      Male: 10 to 14 years
+        H76006:      Male: 15 to 17 years
+        H76007:      Male: 18 and 19 years
+        H76008:      Male: 20 years
+        H76009:      Male: 21 years
+        H76010:      Male: 22 to 24 years
+        H76011:      Male: 25 to 29 years
+        H76012:      Male: 30 to 34 years
+        H76013:      Male: 35 to 39 years
+        H76014:      Male: 40 to 44 years
+        H76015:      Male: 45 to 49 years
+        H76016:      Male: 50 to 54 years
+        H76017:      Male: 55 to 59 years
+        H76018:      Male: 60 and 61 years
+        H76019:      Male: 62 to 64 years
+        H76020:      Male: 65 and 66 years
+        H76021:      Male: 67 to 69 years
+        H76022:      Male: 70 to 74 years
+        H76023:      Male: 75 to 79 years
+        H76024:      Male: 80 to 84 years
+        H76025:      Male: 85 years and over
+        H76026:      Female
+        H76027:      Female: Under 5 years
+        H76028:      Female: 5 to 9 years
+        H76029:      Female: 10 to 14 years
+        H76030:      Female: 15 to 17 years
+        H76031:      Female: 18 and 19 years
+        H76032:      Female: 20 years
+        H76033:      Female: 21 years
+        H76034:      Female: 22 to 24 years
+        H76035:      Female: 25 to 29 years
+        H76036:      Female: 30 to 34 years
+        H76037:      Female: 35 to 39 years
+        H76038:      Female: 40 to 44 years
+        H76039:      Female: 45 to 49 years
+        H76040:      Female: 50 to 54 years
+        H76041:      Female: 55 to 59 years
+        H76042:      Female: 60 and 61 years
+        H76043:      Female: 62 to 64 years
+        H76044:      Female: 65 and 66 years
+        H76045:      Female: 67 to 69 years
+        H76046:      Female: 70 to 74 years
+        H76047:      Female: 75 to 79 years
+        H76048:      Female: 80 to 84 years
+        H76049:      Female: 85 years and over
+ 
+    Table 8:     Median Age by Sex
+    Universe:    Total population
+    Source code: P13
+    NHGIS code:  H77
+        H77001:      Median age: Both sexes
+        H77002:      Median age: Male
+        H77003:      Median age: Female
+ 
+    Table 9:     Sex by Age for the Population Under 20 Years
+    Universe:    Population under 20 years
+    Source code: P14
+    NHGIS code:  H78
+        H78001:      Total
+        H78002:      Male
+        H78003:      Male: Under 1 year
+        H78004:      Male: 1 year
+        H78005:      Male: 2 years
+        H78006:      Male: 3 years
+        H78007:      Male: 4 years
+        H78008:      Male: 5 years
+        H78009:      Male: 6 years
+        H78010:      Male: 7 years
+        H78011:      Male: 8 years
+        H78012:      Male: 9 years
+        H78013:      Male: 10 years
+        H78014:      Male: 11 years
+        H78015:      Male: 12 years
+        H78016:      Male: 13 years
+        H78017:      Male: 14 years
+        H78018:      Male: 15 years
+        H78019:      Male: 16 years
+        H78020:      Male: 17 years
+        H78021:      Male: 18 years
+        H78022:      Male: 19 years
+        H78023:      Female
+        H78024:      Female: Under 1 year
+        H78025:      Female: 1 year
+        H78026:      Female: 2 years
+        H78027:      Female: 3 years
+        H78028:      Female: 4 years
+        H78029:      Female: 5 years
+        H78030:      Female: 6 years
+        H78031:      Female: 7 years
+        H78032:      Female: 8 years
+        H78033:      Female: 9 years
+        H78034:      Female: 10 years
+        H78035:      Female: 11 years
+        H78036:      Female: 12 years
+        H78037:      Female: 13 years
+        H78038:      Female: 14 years
+        H78039:      Female: 15 years
+        H78040:      Female: 16 years
+        H78041:      Female: 17 years
+        H78042:      Female: 18 years
+        H78043:      Female: 19 years
+ 
+    Table 10:    Hispanic or Latino Origin of Householder by Race of Householder
+    Universe:    Households
+    Source code: P15
+    NHGIS code:  H79
+        H79001:      Total
+        H79002:      Not Hispanic or Latino householder
+        H79003:      Not Hispanic or Latino householder: Householder who is White alone
+        H79004:      Not Hispanic or Latino householder: Householder who is Black or African American alone
+        H79005:      Not Hispanic or Latino householder: Householder who is American Indian and Alaska Native alone
+        H79006:      Not Hispanic or Latino householder: Householder who is Asian alone
+        H79007:      Not Hispanic or Latino householder: Householder who is Native Hawaiian and Other Pacific Islander alone
+        H79008:      Not Hispanic or Latino householder: Householder who is Some Other Race alone
+        H79009:      Not Hispanic or Latino householder: Householder who is Two or More Races
+        H79010:      Hispanic or Latino householder
+        H79011:      Hispanic or Latino householder: Householder who is White alone
+        H79012:      Hispanic or Latino householder: Householder who is Black or African American alone
+        H79013:      Hispanic or Latino householder: Householder who is American Indian and Alaska Native alone
+        H79014:      Hispanic or Latino householder: Householder who is Asian alone
+        H79015:      Hispanic or Latino householder: Householder who is Native Hawaiian and Other Pacific Islander alone
+        H79016:      Hispanic or Latino householder: Householder who is Some Other Race alone
+        H79017:      Hispanic or Latino householder: Householder who is Two or More Races
+ 
+    Table 11:    Population in Households by Age
+    Universe:    Population in households
+    Source code: P16
+    NHGIS code:  H8A
+        H8A001:      Total
+        H8A002:      Under 18 years
+        H8A003:      18 years and over
+ 
+    Table 12:    Household Type
+    Universe:    Households
+    Source code: P18
+    NHGIS code:  H8C
+        H8C001:      Total
+        H8C002:      Family households
+        H8C003:      Family households: Husband-wife family
+        H8C004:      Family households: Other family
+        H8C005:      Family households: Other family: Male householder, no wife present
+        H8C006:      Family households: Other family: Female householder, no husband present
+        H8C007:      Nonfamily households
+        H8C008:      Nonfamily households: Householder living alone
+        H8C009:      Nonfamily households: Householder not living alone
+ 
+    Table 13:    Household Size by Household Type by Presence of Own Children
+    Universe:    Households
+    Source code: P19
+    NHGIS code:  H8D
+        H8D001:      Total
+        H8D002:      1-person household
+        H8D003:      1-person household: Male householder
+        H8D004:      1-person household: Female householder
+        H8D005:      2-or-more-person household
+        H8D006:      2-or-more-person household: Family households
+        H8D007:      2-or-more-person household: Family households: Husband-wife family
+        H8D008:      2-or-more-person household: Family households: Husband-wife family: With own children under 18 years
+        H8D009:      2-or-more-person household: Family households: Husband-wife family: No own children under 18 years
+        H8D010:      2-or-more-person household: Family households: Other family
+        H8D011:      2-or-more-person household: Family households: Other family: Male householder, no wife present
+        H8D012:      2-or-more-person household: Family households: Other family: Male householder, no wife present: With own children under 18 years
+        H8D013:      2-or-more-person household: Family households: Other family: Male householder, no wife present: No own children under 18 years
+        H8D014:      2-or-more-person household: Family households: Other family: Female householder, no husband present
+        H8D015:      2-or-more-person household: Family households: Other family: Female householder, no husband present: With own children under 18 years
+        H8D016:      2-or-more-person household: Family households: Other family: Female householder, no husband present: No own children under 18 years
+        H8D017:      2-or-more-person household: Nonfamily households
+        H8D018:      2-or-more-person household: Nonfamily households: Male householder
+        H8D019:      2-or-more-person household: Nonfamily households: Female householder
+ 
+    Table 14:    Households by Presence of People Under 18 Years by Household Type by Age of People Under 18 Years
+    Universe:    Households
+    Source code: P20
+    NHGIS code:  H8E
+        H8E001:      Total
+        H8E002:      Households with one or more people under 18 years
+        H8E003:      Households with one or more people under 18 years: Family households
+        H8E004:      Households with one or more people under 18 years: Family households: Husband-wife family
+        H8E005:      Households with one or more people under 18 years: Family households: Husband-wife family: Under 6 years only
+        H8E006:      Households with one or more people under 18 years: Family households: Husband-wife family: Under 6 years and 6 to 17 years
+        H8E007:      Households with one or more people under 18 years: Family households: Husband-wife family: 6 to 17 years only
+        H8E008:      Households with one or more people under 18 years: Family households: Other family
+        H8E009:      Households with one or more people under 18 years: Family households: Other family: Male householder, no wife present
+        H8E010:      Households with one or more people under 18 years: Family households: Other family: Male householder, no wife present: Under 6 years only
+        H8E011:      Households with one or more people under 18 years: Family households: Other family: Male householder, no wife present: Under 6 years and 6 to 17 years
+        H8E012:      Households with one or more people under 18 years: Family households: Other family: Male householder, no wife present: 6 to 17 years only
+        H8E013:      Households with one or more people under 18 years: Family households: Other family: Female householder, no husband present
+        H8E014:      Households with one or more people under 18 years: Family households: Other family: Female householder, no husband present: Under 6 years only
+        H8E015:      Households with one or more people under 18 years: Family households: Other family: Female householder, no husband present: Under 6 years and 6 to 17 years
+        H8E016:      Households with one or more people under 18 years: Family households: Other family: Female householder, no husband present: 6 to 17 years only
+        H8E017:      Households with one or more people under 18 years: Nonfamily households
+        H8E018:      Households with one or more people under 18 years: Nonfamily households: Male householder
+        H8E019:      Households with one or more people under 18 years: Nonfamily households: Male householder: Under 6 years only
+        H8E020:      Households with one or more people under 18 years: Nonfamily households: Male householder: Under 6 years and 6 to 17 years
+        H8E021:      Households with one or more people under 18 years: Nonfamily households: Male householder: 6 to 17 years only
+        H8E022:      Households with one or more people under 18 years: Nonfamily households: Female householder
+        H8E023:      Households with one or more people under 18 years: Nonfamily households: Female householder: Under 6 years only
+        H8E024:      Households with one or more people under 18 years: Nonfamily households: Female householder: Under 6 years and 6 to 17 years
+        H8E025:      Households with one or more people under 18 years: Nonfamily households: Female householder: 6 to 17 years only
+        H8E026:      Households with no people under 18 years
+        H8E027:      Households with no people under 18 years: Family households
+        H8E028:      Households with no people under 18 years: Family households: Husband-wife family
+        H8E029:      Households with no people under 18 years: Family households: Other family
+        H8E030:      Households with no people under 18 years: Family households: Other family: Male householder, no wife present
+        H8E031:      Households with no people under 18 years: Family households: Other family: Female householder, no husband present
+        H8E032:      Households with no people under 18 years: Nonfamily households
+        H8E033:      Households with no people under 18 years: Nonfamily households: Male householder
+        H8E034:      Households with no people under 18 years: Nonfamily households: Female householder
+ 
+    Table 15:    Household Type by Age of Householder
+    Universe:    Households
+    Source code: P22
+    NHGIS code:  H8G
+        H8G001:      Total
+        H8G002:      Family households
+        H8G003:      Family households: Householder 15 to 24 years
+        H8G004:      Family households: Householder 25 to 34 years
+        H8G005:      Family households: Householder 35 to 44 years
+        H8G006:      Family households: Householder 45 to 54 years
+        H8G007:      Family households: Householder 55 to 59 years
+        H8G008:      Family households: Householder 60 to 64 years
+        H8G009:      Family households: Householder 65 to 74 years
+        H8G010:      Family households: Householder 75 to 84 years
+        H8G011:      Family households: Householder 85 years and over
+        H8G012:      Nonfamily households
+        H8G013:      Nonfamily households: Householder 15 to 24 years
+        H8G014:      Nonfamily households: Householder 25 to 34 years
+        H8G015:      Nonfamily households: Householder 35 to 44 years
+        H8G016:      Nonfamily households: Householder 45 to 54 years
+        H8G017:      Nonfamily households: Householder 55 to 59 years
+        H8G018:      Nonfamily households: Householder 60 to 64 years
+        H8G019:      Nonfamily households: Householder 65 to 74 years
+        H8G020:      Nonfamily households: Householder 75 to 84 years
+        H8G021:      Nonfamily households: Householder 85 years and over
+ 
+--------------------------------------------------------------------------------
+Citation and Use of NHGIS Data
+--------------------------------------------------------------------------------
+ 
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* REDISTRIBUTION: You will not redistribute the data without permission.
+
+  You may publish a subset of the data to meet journal requirements for accessing 
+  data related to a particular publication. Contact us for permission for any other 
+  redistribution; we will consider requests for free and commercial redistribution.
+
+* CITATION: You will cite NHGIS appropriately.
+
+    * Publications and research reports employing NHGIS data (either tabular or GIS) 
+      should include the following citation:
+
+        Steven Manson, Jonathan Schroeder, David Van Riper, and Steven Ruggles. 
+        IPUMS National Historical Geographic Information System: Version 14.0 
+        [Database]. Minneapolis, MN: IPUMS. 2019. 
+        http://doi.org/10.18128/D050.V14.0
+
+
+    * For policy briefs, online resources, or articles in the popular press, we 
+      recommend that you cite the use of NHGIS data as follows:
+
+        IPUMS NHGIS, University of Minnesota, www.nhgis.org.
+
+These terms of use are a legally binding agreement. You can use the data only in 
+accordance with these terms, and any other use is a violation of the agreement. 
+Violations may result in revocation of the agreement and prohibition from using other 
+IPUMS data. If IPUMS or our partners are harmed from your violation, you are 
+responsible for all damages, including reasonable attorney's fees and expenses.
+        
+In addition, we request that users send us a copy of any publications, research
+reports, or educational material making use of the data or documentation.
+
+Send electronic material to: nhgis@umn.edu
+
+Printed matter should be sent to:
+
+    IPUMS NHGIS
+    Institute for Social Research and Data Innovation
+    University of Minnesota
+    50 Willey Hall
+    225 19th Ave S
+    Minneapolis, MN 55455

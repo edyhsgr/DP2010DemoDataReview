@@ -1,0 +1,241 @@
+--------------------------------------------------------------------------------
+Codebook for NHGIS data file 'long_dp14_*'
+--------------------------------------------------------------------------------
+ 
+Contents
+    - Data Description
+    - Data Summary
+    - Data Dictionary
+    - Citation and Use
+ 
+Additional documentation on NHGIS data sources is available at: 
+    https://www.nhgis.org/documentation/tabular-data 
+
+--------------------------------------------------------------------------------
+Data Description
+--------------------------------------------------------------------------------
+
+This data file contains the variables that are found in segment 14 of the 
+Census Bureau's 2010 Demonstration Data Product. The 2010 Demonstration Data 
+Product uses a differentially private algorithm to inject noise into the 2010
+decennial census data. This data file facilitates the comparison of the noise-
+injected data vs. the original 2010 decennial data.
+
+Technical documentation and raw data files for the 2010 Demonstration Product 
+can be found at https://www.census.gov/programs-surveys/decennial-census/2020-census/planning-management/2020-census-data-products/2010-demonstration-data-products.html
+
+Segment 14 of the demonstration product contains housing and householder 
+variables. In particular, segment 14 contains variables from the following
+2010 Summary File 1 tables:
+
+H1
+H3
+H6
+H7
+H10
+H13
+
+This data file is in a long format. Each record is a combination of a 
+geographic unit and a variable code. Each file has the same record 
+layout:
+
+gisjoin:     GIS Join Match Code
+name_dp:     Area Name-Legal/Statistical Area Description (LSAD) Term-Part Indicator from the 2010 Demonstration product
+var_code:    Variable code
+dp:          Variable value from the 2010 Demonstration product (the noise-injected value)
+name_sf:     Area Name-Legal/Statistical Area Description (LSAD) Term-Part Indicator from the 2010 Summary File 1
+sf:          Variable value from the 2010 Summary File 1 product
+
+IPUMS NHGIS staff created data files for 11 different geographic levels. File
+names and their meanings are:
+
+1. long_dp14_040.csv - State
+2. long_dp14_050.csv - County
+3. long_dp14_060.csv - County subdivision
+4. long_dp14_160.csv - Place
+5. long_dp14_230.csv - Alaska Native Regional Corporation 
+6. long_dp14_250.csv - American Indian/Alaska Native Area/Hawaiian Home Land
+7. long_dp14_310.csv - Core-based statistical area (CBSA)
+8. long_dp14_400.csv - Urban areas
+9. long_dp14_500.csv - 111th Congressional district 
+10. long_dp14_610.csv - State legislative district (upper chamber)
+11. long_dp14_620.csv - State legislative district (lower chamber)
+
+The remainder of this codebook describe the contents of each column.
+ 
+--------------------------------------------------------------------------------
+Data Summary
+--------------------------------------------------------------------------------
+ 
+Year:             2010
+Dataset:          2010 Census: SF 1a - P & H Tables [Blocks & Larger Areas]
+   NHGIS code:    2010_SF1a
+   NHGIS ID:      ds172
+Breakdown(s):     Geographic Subarea:
+                     Total area (00)
+Suffix codes:     _dp:   differentially private 2010 data 
+                  _sf:   summary file 1 2010 data
+ 
+Tables:
+ 
+1. Housing Units
+   Universe:    Housing units
+   Source code: H1
+   NHGIS code:  IFC
+ 
+2. Occupancy Status
+   Universe:    Housing units
+   Source code: H3
+   NHGIS code:  IFE
+ 
+3. Race of Householder
+   Universe:    Occupied housing units
+   Source code: H6
+   NHGIS code:  IFH
+ 
+4. Hispanic or Latino Origin of Householder by Race of Householder
+   Universe:    Occupied housing units
+   Source code: H7
+   NHGIS code:  IFI
+ 
+5. Total Population in Occupied Housing Units
+   Universe:    Population in occupied housing units
+   Source code: H10
+   NHGIS code:  IFL
+ 
+6. Household Size
+   Universe:    Occupied housing units
+   Source code: H13
+   NHGIS code:  IFO
+ 
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+ 
+Fields 
+        gisjoin:     GIS Join Match Code
+        name_dp:     Area Name-Legal/Statistical Area Description (LSAD) Term-Part Indicator from the 2010 Demonstration product
+        var_code:    Variable code
+        dp:          Variable value from the 2010 Demonstration product (the noise-injected value)
+        name_sf:     Area Name-Legal/Statistical Area Description (LSAD) Term-Part Indicator from the 2010 Summary File 1
+        sf:          Variable value from the 2010 Summary File 1 product
+ 
+Breakdown:
+    Geographic Subarea: Total area (00)
+ 
+    Table 1:     Housing Units
+    Universe:    Housing units
+    Source code: H1
+    NHGIS code:  IFC
+        IFC001:      Total
+ 
+    Table 2:     Occupancy Status
+    Universe:    Housing units
+    Source code: H3
+    NHGIS code:  IFE
+        IFE001:      Total
+        IFE002:      Occupied
+        IFE003:      Vacant
+ 
+    Table 3:     Race of Householder
+    Universe:    Occupied housing units
+    Source code: H6
+    NHGIS code:  IFH
+        IFH001:      Total
+        IFH002:      Householder who is White alone
+        IFH003:      Householder who is Black or African American alone
+        IFH004:      Householder who is American Indian and Alaska Native alone
+        IFH005:      Householder who is Asian alone
+        IFH006:      Householder who is Native Hawaiian and Other Pacific Islander alone
+        IFH007:      Householder who is Some Other Race alone
+        IFH008:      Householder who is Two or More Races
+ 
+    Table 4:     Hispanic or Latino Origin of Householder by Race of Householder
+    Universe:    Occupied housing units
+    Source code: H7
+    NHGIS code:  IFI
+        IFI001:      Total
+        IFI002:      Not Hispanic or Latino householder
+        IFI003:      Not Hispanic or Latino householder: Householder who is White alone
+        IFI004:      Not Hispanic or Latino householder: Householder who is Black or African American alone
+        IFI005:      Not Hispanic or Latino householder: Householder who is American Indian and Alaska Native alone
+        IFI006:      Not Hispanic or Latino householder: Householder who is Asian alone
+        IFI007:      Not Hispanic or Latino householder: Householder who is Native Hawaiian and Other Pacific Islander alone
+        IFI008:      Not Hispanic or Latino householder: Householder who is Some Other Race alone
+        IFI009:      Not Hispanic or Latino householder: Householder who is Two or More Races
+        IFI010:      Hispanic or Latino householder
+        IFI011:      Hispanic or Latino householder: Householder who is White alone
+        IFI012:      Hispanic or Latino householder: Householder who is Black or African American alone
+        IFI013:      Hispanic or Latino householder: Householder who is American Indian and Alaska Native alone
+        IFI014:      Hispanic or Latino householder: Householder who is Asian alone
+        IFI015:      Hispanic or Latino householder: Householder who is Native Hawaiian and Other Pacific Islander alone
+        IFI016:      Hispanic or Latino householder: Householder who is Some Other Race alone
+        IFI017:      Hispanic or Latino householder: Householder who is Two or More Races
+ 
+    Table 5:     Total Population in Occupied Housing Units
+    Universe:    Population in occupied housing units
+    Source code: H10
+    NHGIS code:  IFL
+        IFL001:      Total
+ 
+    Table 6:     Household Size
+    Universe:    Occupied housing units
+    Source code: H13
+    NHGIS code:  IFO
+        IFO001:      Total
+        IFO002:      1-person household
+        IFO003:      2-person household
+        IFO004:      3-person household
+        IFO005:      4-person household
+        IFO006:      5-person household
+        IFO007:      6-person household
+        IFO008:      7-or-more-person household
+ 
+--------------------------------------------------------------------------------
+Citation and Use of NHGIS Data
+--------------------------------------------------------------------------------
+ 
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* REDISTRIBUTION: You will not redistribute the data without permission.
+
+  You may publish a subset of the data to meet journal requirements for accessing 
+  data related to a particular publication. Contact us for permission for any other 
+  redistribution; we will consider requests for free and commercial redistribution.
+
+* CITATION: You will cite NHGIS appropriately.
+
+    * Publications and research reports employing NHGIS data (either tabular or GIS) 
+      should include the following citation:
+
+        Steven Manson, Jonathan Schroeder, David Van Riper, and Steven Ruggles. 
+        IPUMS National Historical Geographic Information System: Version 14.0 
+        [Database]. Minneapolis, MN: IPUMS. 2019. 
+        http://doi.org/10.18128/D050.V14.0
+
+    * For policy briefs, online resources, or articles in the popular press, we 
+      recommend that you cite the use of NHGIS data as follows:
+
+        IPUMS NHGIS, University of Minnesota, www.nhgis.org.
+
+
+These terms of use are a legally binding agreement. You can use the data only in 
+accordance with these terms, and any other use is a violation of the agreement. 
+Violations may result in revocation of the agreement and prohibition from using other 
+IPUMS data. If IPUMS or our partners are harmed from your violation, you are 
+responsible for all damages, including reasonable attorney's fees and expenses.
+        
+In addition, we request that users send us a copy of any publications, research
+reports, or educational material making use of the data or documentation.
+
+Send electronic material to: nhgis@umn.edu
+
+Printed matter should be sent to:
+
+    IPUMS NHGIS
+    Institute for Social Research and Data Innovation
+    University of Minnesota
+    50 Willey Hall
+    225 19th Ave S
+    Minneapolis, MN 55455

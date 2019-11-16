@@ -16,7 +16,7 @@ Names<-read.table(file="https://raw.githubusercontent.com/edyhsgr/DP2010DemoData
 
 ui<-fluidPage(
 
-	tags$h3("Review of U.S. Census Bureau's 2010 Demonstration Data Products, Populations by Age and Sex, California Counties, Cities, and Places"),
+	tags$h3("Review of U.S. Census Bureau's 2010 Demonstration Data Products, Population by Demographic Characteristics, California Counties, Cities, and Places"),
 	p("U.S. Census Bureau data downloaded November 8, 2019 from ",
 	tags$a(href="https://www.nhgis.org/differentially-private-2010-census-data", "IPUMS NHGIS, University of Minnesota."),
 	"",

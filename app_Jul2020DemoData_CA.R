@@ -18,7 +18,7 @@ Names<-Names$V1
 
 ui<-fluidPage(
 
-	tags$h3("Review of U.S. Census Bureau's 2010 Demonstration Data (July 2020 release): Population by Demographic Characteristics, California Counties, Cities, and Places"),
+	tags$h3("U.S. Census Bureau's 2010 Demonstration Data (July 2020 release): Population by Demographic Characteristics, California Counties, Cities, and Places"),
 	p("U.S. Census Bureau data downloaded July 15, 2020 from ",
 	tags$a(href="https://www.nhgis.org/privacy-protected-demonstration-data", "IPUMS NHGIS, University of Minnesota.")),
 	p("Update of ",

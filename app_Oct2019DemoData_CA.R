@@ -1,9 +1,10 @@
 ##########
-#US CENSUS BUREAU DIFFERENTIAL PRIVACY 2010 DEMONSTRATION DATA FOR CALIFORNIA
+#US CENSUS BUREAU DIFFERENTIAL PRIVACY 2010 DEMONSTRATION DATA FOR CALIFORNIA (OCTOBER 2019 RELEASE)
 #
 #DATA DOWNLOADED NOVEMBER 8, 2019 FROM IPUMS NHGIS, UNIVERSITY OF MINNESOTA: https://www.nhgis.org/differentially-private-2010-census-data
+#SEE UPDATE AT https://shiny.demog.berkeley.edu/eddieh/DP2010DemoData_CA_July2020/
 #
-#EDDIE HUNSINGER, NOVEMBER 2019
+#EDDIE HUNSINGER, NOVEMBER 2019 (updated notes and labels, July 2020)
 #https://edyhsgr.github.io/eddieh/
 #
 #THERE IS NO WARRANTY FOR THIS CODE
@@ -16,9 +17,11 @@ Names<-read.table(file="https://raw.githubusercontent.com/edyhsgr/DP2010DemoData
 
 ui<-fluidPage(
 
-	tags$h3("Review of U.S. Census Bureau's 2010 Demonstration Data Products: Population by Demographic Characteristics, California Counties, Cities, and Places"),
+	tags$h3("Review of U.S. Census Bureau's 2010 Demonstration Data Products (October 2019 release): Population by Demographic Characteristics, California Counties, Cities, and Places"),
 	p("U.S. Census Bureau data downloaded November 8, 2019 from ",
-	tags$a(href="https://www.nhgis.org/differentially-private-2010-census-data", "IPUMS NHGIS, University of Minnesota."),
+	tags$a(href="https://www.nhgis.org/differentially-private-2010-census-data", "IPUMS NHGIS, University of Minnesota.")),
+	p("See ",
+	tags$a(href="https://shiny.demog.berkeley.edu/eddieh/DP2010DemoData_CA_July2020/", "July 2020 update."),
 	"",
 	tags$a(href="", 
 	"")
@@ -41,7 +44,7 @@ tags$a(href="https://shiny.rstudio.com/",
 	"Shiny for R."),
 tags$a(href="https://github.com/edyhsgr/DP2010DemoDataReview", 
 	"Related GitHub repository."),
-"November 2019."),
+"November 2019 (updated notes in July 2020)."),
 
 width=3
 ),
@@ -151,7 +154,7 @@ mtext(side=1,line=-55,at=0,text=paste(c("Population by Age and Sex, ", input$Are
 legend(max(AgeMale$sf)*1.85, 18, legend=c("2010 Census Data with Differential Privacy","Published 2010 Census Data"), col=c(fill_color,rgb(0,1,1,0)),border=rgb(0,0,0,0), pt.cex=2, pch=15, cex=1.5, bty ="n", y.intersp=1.25)
 legend(max(AgeMale$sf)*1.85, 18, legend=c("",""), col=c(fill_color, rgb(0,0,0)), pt.cex=2, pch=0, cex=1.5, bty ="n", y.intersp=1.25)
 
-mtext(side=1,line=6,adj=0,text=paste(c("Source: U.S. Census Bureau's 2010 Demonstration Data Products. Accessed via IPUMS NHGIS, University of Minnesota, November 2019."),collapse=""),font=.5,cex=1)
+mtext(side=1,line=6,adj=0,text=paste(c("Source: U.S. Census Bureau's 2010 Demonstration Data Products (October 2019 release). Accessed via IPUMS NHGIS, University of Minnesota, November 2019."),collapse=""),font=.5,cex=1)
 
 barplot(AgeFemale$dp,horiz=T,names=FALSE,space=0,xlim=c(0,max(AgeMale$sf)*2),las=1,col=fill_color,border=rgb(0,0,0,0))
   par(new=TRUE)
@@ -180,7 +183,7 @@ mtext(side=1,line=-42*(sum(Race$dp)/sum(Race$sf)),adj=.82,text=paste(c("Total po
 
 mtext(side=1,line=-50,at=2.5,text=paste(c("Population by Race and Hispanic Origin Groupings, ", input$Area),collapse=""),font=1,cex=1.75)
 
-mtext(side=1,line=4,adj=0,text=paste(c("Source: U.S. Census Bureau's 2010 Demonstration Data Products. Accessed via IPUMS NHGIS, University of Minnesota, November 2019."),collapse=""),font=.5,cex=1)
+mtext(side=1,line=4,adj=0,text=paste(c("Source: U.S. Census Bureau's 2010 Demonstration Data Products (October 2019 release). Accessed via IPUMS NHGIS, University of Minnesota, November 2019."),collapse=""),font=.5,cex=1)
 
 plot.new()
 legend("left",legend=rev(c("White, not Hispanic","Black, not Hispanic","American Indian or Alaska Native, not Hispanic","Asian or Pacific Islander, not Hispanic","Two+ or Other, not Hispanic","Hispanic")),fill=rev(c(colors)),cex=1.5,bty="n")

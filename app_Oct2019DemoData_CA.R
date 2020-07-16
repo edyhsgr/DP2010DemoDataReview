@@ -2,7 +2,7 @@
 #US CENSUS BUREAU DIFFERENTIAL PRIVACY 2010 DEMONSTRATION DATA FOR CALIFORNIA (OCTOBER 2019 RELEASE)
 #
 #DATA DOWNLOADED NOVEMBER 8, 2019 FROM IPUMS NHGIS, UNIVERSITY OF MINNESOTA: https://www.nhgis.org/differentially-private-2010-census-data
-#SEE UPDATE AT https://shiny.demog.berkeley.edu/eddieh/DP2010DemoData_CA_July2020/
+#SEE UPDATE AT https://shiny.demog.berkeley.edu/eddieh/DP2010DemoData_CA_Jul2020/
 #
 #EDDIE HUNSINGER, NOVEMBER 2019 (updated notes and labels, July 2020)
 #https://edyhsgr.github.io/eddieh/
@@ -21,7 +21,7 @@ ui<-fluidPage(
 	p("U.S. Census Bureau data downloaded November 8, 2019 from ",
 	tags$a(href="https://www.nhgis.org/differentially-private-2010-census-data", "IPUMS NHGIS, University of Minnesota.")),
 	p("See ",
-	tags$a(href="https://shiny.demog.berkeley.edu/eddieh/DP2010DemoData_CA_July2020/", "July 2020 update."),
+	tags$a(href="https://shiny.demog.berkeley.edu/eddieh/DP2010DemoData_CA_Jul2020/", "July 2020 update."),
 	"",
 	tags$a(href="", 
 	"")

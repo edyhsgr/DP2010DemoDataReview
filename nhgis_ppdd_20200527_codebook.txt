@@ -1,0 +1,621 @@
+--------------------------------------------------------------------------------
+Codebook for IPUMS NHGIS Privacy-Protected 2010 Census Demonstration Data - v20200527 
+--------------------------------------------------------------------------------
+
+Contents
+    - Data Description
+    - Data Summary
+    - Data Dictionary
+    - Citation and Use
+
+Additional documentation on Privacy-Protected Census Demonstration Data
+data is available at:
+
+    https://www.nhgis.org/privacy-protected-demonstration-data
+    
+--------------------------------------------------------------------------------
+Data Description
+--------------------------------------------------------------------------------
+
+IPUMS NHGIS is generating Privacy-Protected Summary Files (PPSF) from the US 
+Census Bureau's Privacy-Protected Microdata File (PPMF). The PPMF was produced 
+by the TopDown Algorithm, which uses differentially private mechanism to protect
+respondent privacy. IPUMS NHGIS converts the PPMF, where every record is a 
+person, into a summary file, where every record is a geographic unit. 
+Converting the microdata to counts for geographic units facilitates use by 
+scientists and researchers.
+
+After producing the PPSF, IPUMS NHGIS merges the PPSF with data from 
+Summary File 1 (SF1) of the 2010 Decennial Census. We call this linked file the 
+Privacy-Protected 2010 Census Demonstration Data. Users may compare PPSF and SF1 counts to 
+assess TopDown's impact on the quality and utility of the data. Counts from 
+the PPSF have a "_dp" suffix on the column headers, and counts from SF1 have 
+a "_sf" suffix on the column headers. This dataset is in a wide format and 
+comes as a comma-separated value (CSV) file. 
+
+Tabulations in this Privacy-Protected Demonstration Data file are derived from
+the 20200527 vintage PPMF. Technical documentation for the PPMF, along with
+the original microdata file, are availalble at https://www.census.gov/programs-surveys/decennial-census/2020-census/planning-management/2020-census-data-products/2020-das-metrics.html
+
+This demonstration data file contains variables from the following tables:
+
+P1 - Total Population
+P3 - Race (7 categories)
+P4 - Hispanic or Latino Origin
+P5 - Hispanic or Latino, and Not Hispanic or Latino by Race
+P8 - Race (63 categories)
+P9 - Hispanic or Latino, and Not Hispanic or Latino by Race (63 categories)
+P10 - Race (63 categories) for the Population 18 Years and Over
+P11 - Hispanic or Latino, and Not Hispanic or Latino by Race (63 categories) for the Population 18 Years and Over
+P12 - Sex by Age
+P42 - Group Quarters Population by Group Quarters Type
+
+IPUMS NHGIS staff created data files for 15 different geographic levels. File
+names and their meanings are:
+
+1. nhgis_ppdd_20200527_state.csv - State
+2. nhgis_ppdd_20200527_county.csv - County
+3. nhgis_ppdd_20200527_tract.csv - Census tract
+4. nhgis_ppdd_20200527_blck_grp.csv - Block group
+5. nhgis_ppdd_20200527_cty_sub.csv - County subdivision
+6. nhgis_ppdd_20200527_place.csv - Place
+7. nhgis_ppdd_20200527_anrc.csv - Alaska Native Regional Corporation
+8. nhgis_ppdd_20200527_aianhh.csv - American Indian/Alaska Native Area/Hawaiian Home Land
+9. nhgis_ppdd_20200527_cbsa.csv - Core-based statistical area (CBSA)
+10. nhgis_ppdd_20200527_urb_area.csv - Urban areas
+11. nhgis_ppdd_20200527_cd_110th-112th.csv - 111th Congressional district
+12. nhgis_ppdd_20200527_stleg_up.csv - State legislative district (upper chamber)
+13. nhgis_ppdd_20200527_stleg_lo.csv - State legislative district (lower chamber)
+14. nhgis_ppdd_20200527_sduni.csv - School district (unified)
+15. nhgis_ppdd_20200527_block_<State Postal Code>.csv - Block
+
+Block data are separated into state-specific files.
+
+The remainder of this codebook describes the contents of each column.
+
+--------------------------------------------------------------------------------
+Data Summary
+--------------------------------------------------------------------------------
+
+Year:             2010
+Source 1 ("dp"):  U.S. Census Bureau Privacy-Protected Microdata File, version 20200527
+Source 2 ("sf"):
+   NHGIS Dataset: 2010 Census: SF 1a - P & H Tables [Blocks & Larger Areas]
+   NHGIS code:    2010_SF1a
+   NHGIS ID:      ds172
+
+Tables:
+
+1. Total Population
+   Universe:    Total population
+   Source code: P1
+   NHGIS code:  H7V
+
+2. Race
+   Universe:    Total population
+   Source code: P3
+   NHGIS code:  H7X
+
+3. Hispanic or Latino Origin
+   Universe:    Total population
+   Source code: P4
+   NHGIS code:  H7Y
+
+4. Hispanic or Latino Origin by Race
+   Universe:    Total population
+   Source code: P5
+   NHGIS code:  H7Z
+
+5. Race
+   Universe:    Total population
+   Source code: P8
+   NHGIS code:  H72
+
+6. Hispanic or Latino, and Not Hispanic or Latino by Race
+   Universe:    Total population
+   Source code: P9
+   NHGIS code:  H73
+
+7. Race for the Population 18 Years and Over
+   Universe:    Population 18 years and over
+   Source code: P10
+   NHGIS code:  H74
+
+8. Hispanic or Latino, and Not Hispanic or Latino by Race for the Population 18 Years and Over
+   Universe:    Population 18 years and over
+   Source code: P11
+   NHGIS code:  H75
+
+9. Sex by Age
+   Universe:    Total population
+   Source code: P12
+   NHGIS code:  H76
+
+10. Group Quarters Population by Group Quarters Type
+    Universe:    Population in group quarters
+    Source code: P42
+    NHGIS code:  H80
+
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+
+Context Fields
+        gisjoin:     GIS Join Match Code
+        state:       State Code (available for geographic levels that nest within states)
+        name:        Area Name-Legal/Statistical Area Description (LSAD) Term-Part Indicator
+
+    Table 1:     Total Population
+    Universe:    Total population
+    Source code: P1
+    NHGIS code:  H7V
+        H7V001:      Total
+
+    Table 2:     Race
+    Universe:    Total population
+    Source code: P3
+    NHGIS code:  H7X
+        H7X001:      Total
+        H7X002:      White alone
+        H7X003:      Black or African American alone
+        H7X004:      American Indian and Alaska Native alone
+        H7X005:      Asian alone
+        H7X006:      Native Hawaiian and Other Pacific Islander alone
+        H7X007:      Some Other Race alone
+        H7X008:      Two or More Races
+
+    Table 3:     Hispanic or Latino Origin
+    Universe:    Total population
+    Source code: P4
+    NHGIS code:  H7Y
+        H7Y001:      Total
+        H7Y002:      Not Hispanic or Latino
+        H7Y003:      Hispanic or Latino
+
+    Table 4:     Hispanic or Latino Origin by Race
+    Universe:    Total population
+    Source code: P5
+    NHGIS code:  H7Z
+        H7Z001:      Total
+        H7Z002:      Not Hispanic or Latino
+        H7Z003:      Not Hispanic or Latino: White alone
+        H7Z004:      Not Hispanic or Latino: Black or African American alone
+        H7Z005:      Not Hispanic or Latino: American Indian and Alaska Native alone
+        H7Z006:      Not Hispanic or Latino: Asian alone
+        H7Z007:      Not Hispanic or Latino: Native Hawaiian and Other Pacific Islander alone
+        H7Z008:      Not Hispanic or Latino: Some Other Race alone
+        H7Z009:      Not Hispanic or Latino: Two or More Races
+        H7Z010:      Hispanic or Latino
+        H7Z011:      Hispanic or Latino: White alone
+        H7Z012:      Hispanic or Latino: Black or African American alone
+        H7Z013:      Hispanic or Latino: American Indian and Alaska Native alone
+        H7Z014:      Hispanic or Latino: Asian alone
+        H7Z015:      Hispanic or Latino: Native Hawaiian and Other Pacific Islander alone
+        H7Z016:      Hispanic or Latino: Some Other Race alone
+        H7Z017:      Hispanic or Latino: Two or More Races
+
+    Table 5:     Race
+    Universe:    Total population
+    Source code: P8
+    NHGIS code:  H72
+        H72001:      Total
+        H72002:      Population of one race
+        H72003:      Population of one race: White alone
+        H72004:      Population of one race: Black or African American alone
+        H72005:      Population of one race: American Indian and Alaska Native alone
+        H72006:      Population of one race: Asian alone
+        H72007:      Population of one race: Native Hawaiian and Other Pacific Islander alone
+        H72008:      Population of one race: Some Other Race alone
+        H72009:      Two or More Races
+        H72010:      Two or More Races: Population of two races
+        H72011:      Two or More Races: Population of two races: White; Black or African American
+        H72012:      Two or More Races: Population of two races: White; American Indian and Alaska Native
+        H72013:      Two or More Races: Population of two races: White; Asian
+        H72014:      Two or More Races: Population of two races: White; Native Hawaiian and Other Pacific Islander
+        H72015:      Two or More Races: Population of two races: White; Some Other Race
+        H72016:      Two or More Races: Population of two races: Black or African American; American Indian and Alaska Native
+        H72017:      Two or More Races: Population of two races: Black or African American; Asian
+        H72018:      Two or More Races: Population of two races: Black or African American; Native Hawaiian and Other Pacific Islander
+        H72019:      Two or More Races: Population of two races: Black or African American; Some Other Race
+        H72020:      Two or More Races: Population of two races: American Indian and Alaska Native; Asian
+        H72021:      Two or More Races: Population of two races: American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H72022:      Two or More Races: Population of two races: American Indian and Alaska Native; Some Other Race
+        H72023:      Two or More Races: Population of two races: Asian; Native Hawaiian and Other Pacific Islander
+        H72024:      Two or More Races: Population of two races: Asian; Some Other Race
+        H72025:      Two or More Races: Population of two races: Native Hawaiian and Other Pacific Islander; Some Other Race
+        H72026:      Two or More Races: Population of three races
+        H72027:      Two or More Races: Population of three races: White; Black or African American; American Indian and Alaska Native
+        H72028:      Two or More Races: Population of three races: White; Black or African American; Asian
+        H72029:      Two or More Races: Population of three races: White; Black or African American; Native Hawaiian and Other Pacific Islander
+        H72030:      Two or More Races: Population of three races: White; Black or African American; Some Other Race
+        H72031:      Two or More Races: Population of three races: White; American Indian and Alaska Native; Asian
+        H72032:      Two or More Races: Population of three races: White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H72033:      Two or More Races: Population of three races: White; American Indian and Alaska Native; Some Other Race
+        H72034:      Two or More Races: Population of three races: White; Asian; Native Hawaiian and Other Pacific Islander
+        H72035:      Two or More Races: Population of three races: White; Asian; Some Other Race
+        H72036:      Two or More Races: Population of three races: White; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H72037:      Two or More Races: Population of three races: Black or African American; American Indian and Alaska Native; Asian
+        H72038:      Two or More Races: Population of three races: Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H72039:      Two or More Races: Population of three races: Black or African American; American Indian and Alaska Native; Some Other Race
+        H72040:      Two or More Races: Population of three races: Black or African American; Asian; Native Hawaiian and Other Pacific Islander
+        H72041:      Two or More Races: Population of three races: Black or African American; Asian; Some Other Race
+        H72042:      Two or More Races: Population of three races: Black or African American; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H72043:      Two or More Races: Population of three races: American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H72044:      Two or More Races: Population of three races: American Indian and Alaska Native; Asian; Some Other Race
+        H72045:      Two or More Races: Population of three races: American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H72046:      Two or More Races: Population of three races: Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H72047:      Two or More Races: Population of four races
+        H72048:      Two or More Races: Population of four races: White; Black or African American; American Indian and Alaska Native; Asian
+        H72049:      Two or More Races: Population of four races: White; Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H72050:      Two or More Races: Population of four races: White; Black or African American; American Indian and Alaska Native; Some Other Race
+        H72051:      Two or More Races: Population of four races: White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander
+        H72052:      Two or More Races: Population of four races: White; Black or African American; Asian; Some Other Race
+        H72053:      Two or More Races: Population of four races: White; Black or African American; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H72054:      Two or More Races: Population of four races: White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H72055:      Two or More Races: Population of four races: White; American Indian and Alaska Native; Asian; Some Other Race
+        H72056:      Two or More Races: Population of four races: White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H72057:      Two or More Races: Population of four races: White; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H72058:      Two or More Races: Population of four races: Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H72059:      Two or More Races: Population of four races: Black or African American; American Indian and Alaska Native; Asian; Some Other Race
+        H72060:      Two or More Races: Population of four races: Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H72061:      Two or More Races: Population of four races: Black or African American; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H72062:      Two or More Races: Population of four races: American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H72063:      Two or More Races: Population of five races
+        H72064:      Two or More Races: Population of five races: White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H72065:      Two or More Races: Population of five races: White; Black or African American; American Indian and Alaska Native; Asian; Some Other Race
+        H72066:      Two or More Races: Population of five races: White; Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H72067:      Two or More Races: Population of five races: White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H72068:      Two or More Races: Population of five races: White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H72069:      Two or More Races: Population of five races: Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H72070:      Two or More Races: Population of six races
+        H72071:      Two or More Races: Population of six races: White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+
+    Table 6:     Hispanic or Latino, and Not Hispanic or Latino by Race
+    Universe:    Total population
+    Source code: P9
+    NHGIS code:  H73
+        H73001:      Total
+        H73002:      Hispanic or Latino
+        H73003:      Not Hispanic or Latino
+        H73004:      Not Hispanic or Latino: Population of one race
+        H73005:      Not Hispanic or Latino: Population of one race: White alone
+        H73006:      Not Hispanic or Latino: Population of one race: Black or African American alone
+        H73007:      Not Hispanic or Latino: Population of one race: American Indian and Alaska Native alone
+        H73008:      Not Hispanic or Latino: Population of one race: Asian alone
+        H73009:      Not Hispanic or Latino: Population of one race: Native Hawaiian and Other Pacific Islander alone
+        H73010:      Not Hispanic or Latino: Population of one race: Some Other Race alone
+        H73011:      Not Hispanic or Latino: Two or More Races
+        H73012:      Not Hispanic or Latino: Two or More Races: Population of two races
+        H73013:      Not Hispanic or Latino: Two or More Races: Population of two races: White; Black or African American
+        H73014:      Not Hispanic or Latino: Two or More Races: Population of two races: White; American Indian and Alaska Native
+        H73015:      Not Hispanic or Latino: Two or More Races: Population of two races: White; Asian
+        H73016:      Not Hispanic or Latino: Two or More Races: Population of two races: White; Native Hawaiian and Other Pacific Islander
+        H73017:      Not Hispanic or Latino: Two or More Races: Population of two races: White; Some Other Race
+        H73018:      Not Hispanic or Latino: Two or More Races: Population of two races: Black or African American; American Indian and Alaska Native
+        H73019:      Not Hispanic or Latino: Two or More Races: Population of two races: Black or African American; Asian
+        H73020:      Not Hispanic or Latino: Two or More Races: Population of two races: Black or African American; Native Hawaiian and Other Pacific Islander
+        H73021:      Not Hispanic or Latino: Two or More Races: Population of two races: Black or African American; Some Other Race
+        H73022:      Not Hispanic or Latino: Two or More Races: Population of two races: American Indian and Alaska Native; Asian
+        H73023:      Not Hispanic or Latino: Two or More Races: Population of two races: American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H73024:      Not Hispanic or Latino: Two or More Races: Population of two races: American Indian and Alaska Native; Some Other Race
+        H73025:      Not Hispanic or Latino: Two or More Races: Population of two races: Asian; Native Hawaiian and Other Pacific Islander
+        H73026:      Not Hispanic or Latino: Two or More Races: Population of two races: Asian; Some Other Race
+        H73027:      Not Hispanic or Latino: Two or More Races: Population of two races: Native Hawaiian and Other Pacific Islander; Some Other Race
+        H73028:      Not Hispanic or Latino: Two or More Races: Population of three races
+        H73029:      Not Hispanic or Latino: Two or More Races: Population of three races: White; Black or African American; American Indian and Alaska Native
+        H73030:      Not Hispanic or Latino: Two or More Races: Population of three races: White; Black or African American; Asian
+        H73031:      Not Hispanic or Latino: Two or More Races: Population of three races: White; Black or African American; Native Hawaiian and Other Pacific Islander
+        H73032:      Not Hispanic or Latino: Two or More Races: Population of three races: White; Black or African American; Some Other Race
+        H73033:      Not Hispanic or Latino: Two or More Races: Population of three races: White; American Indian and Alaska Native; Asian
+        H73034:      Not Hispanic or Latino: Two or More Races: Population of three races: White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H73035:      Not Hispanic or Latino: Two or More Races: Population of three races: White; American Indian and Alaska Native; Some Other Race
+        H73036:      Not Hispanic or Latino: Two or More Races: Population of three races: White; Asian; Native Hawaiian and Other Pacific Islander
+        H73037:      Not Hispanic or Latino: Two or More Races: Population of three races: White; Asian; Some Other Race
+        H73038:      Not Hispanic or Latino: Two or More Races: Population of three races: White; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H73039:      Not Hispanic or Latino: Two or More Races: Population of three races: Black or African American; American Indian and Alaska Native; Asian
+        H73040:      Not Hispanic or Latino: Two or More Races: Population of three races: Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H73041:      Not Hispanic or Latino: Two or More Races: Population of three races: Black or African American; American Indian and Alaska Native; Some Other Race
+        H73042:      Not Hispanic or Latino: Two or More Races: Population of three races: Black or African American; Asian; Native Hawaiian and Other Pacific Islander
+        H73043:      Not Hispanic or Latino: Two or More Races: Population of three races: Black or African American; Asian; Some Other Race
+        H73044:      Not Hispanic or Latino: Two or More Races: Population of three races: Black or African American; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H73045:      Not Hispanic or Latino: Two or More Races: Population of three races: American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H73046:      Not Hispanic or Latino: Two or More Races: Population of three races: American Indian and Alaska Native; Asian; Some Other Race
+        H73047:      Not Hispanic or Latino: Two or More Races: Population of three races: American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H73048:      Not Hispanic or Latino: Two or More Races: Population of three races: Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H73049:      Not Hispanic or Latino: Two or More Races: Population of four races
+        H73050:      Not Hispanic or Latino: Two or More Races: Population of four races: White; Black or African American; American Indian and Alaska Native; Asian
+        H73051:      Not Hispanic or Latino: Two or More Races: Population of four races: White; Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H73052:      Not Hispanic or Latino: Two or More Races: Population of four races: White; Black or African American; American Indian and Alaska Native; Some Other Race
+        H73053:      Not Hispanic or Latino: Two or More Races: Population of four races: White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander
+        H73054:      Not Hispanic or Latino: Two or More Races: Population of four races: White; Black or African American; Asian; Some Other Race
+        H73055:      Not Hispanic or Latino: Two or More Races: Population of four races: White; Black or African American; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H73056:      Not Hispanic or Latino: Two or More Races: Population of four races: White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H73057:      Not Hispanic or Latino: Two or More Races: Population of four races: White; American Indian and Alaska Native; Asian; Some Other Race
+        H73058:      Not Hispanic or Latino: Two or More Races: Population of four races: White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H73059:      Not Hispanic or Latino: Two or More Races: Population of four races: White; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H73060:      Not Hispanic or Latino: Two or More Races: Population of four races: Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H73061:      Not Hispanic or Latino: Two or More Races: Population of four races: Black or African American; American Indian and Alaska Native; Asian; Some Other Race
+        H73062:      Not Hispanic or Latino: Two or More Races: Population of four races: Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H73063:      Not Hispanic or Latino: Two or More Races: Population of four races: Black or African American; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H73064:      Not Hispanic or Latino: Two or More Races: Population of four races: American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H73065:      Not Hispanic or Latino: Two or More Races: Population of five races
+        H73066:      Not Hispanic or Latino: Two or More Races: Population of five races: White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H73067:      Not Hispanic or Latino: Two or More Races: Population of five races: White; Black or African American; American Indian and Alaska Native; Asian; Some Other Race
+        H73068:      Not Hispanic or Latino: Two or More Races: Population of five races: White; Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H73069:      Not Hispanic or Latino: Two or More Races: Population of five races: White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H73070:      Not Hispanic or Latino: Two or More Races: Population of five races: White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H73071:      Not Hispanic or Latino: Two or More Races: Population of five races: Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H73072:      Not Hispanic or Latino: Two or More Races: Population of six races
+        H73073:      Not Hispanic or Latino: Two or More Races: Population of six races: White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+
+    Table 7:     Race for the Population 18 Years and Over
+    Universe:    Population 18 years and over
+    Source code: P10
+    NHGIS code:  H74
+        H74001:      Total
+        H74002:      Population of one race
+        H74003:      Population of one race: White alone
+        H74004:      Population of one race: Black or African American alone
+        H74005:      Population of one race: American Indian and Alaska Native alone
+        H74006:      Population of one race: Asian alone
+        H74007:      Population of one race: Native Hawaiian and Other Pacific Islander alone
+        H74008:      Population of one race: Some Other Race alone
+        H74009:      Two or More Races
+        H74010:      Two or More Races: Population of two races
+        H74011:      Two or More Races: Population of two races: White; Black or African American
+        H74012:      Two or More Races: Population of two races: White; American Indian and Alaska Native
+        H74013:      Two or More Races: Population of two races: White; Asian
+        H74014:      Two or More Races: Population of two races: White; Native Hawaiian and Other Pacific Islander
+        H74015:      Two or More Races: Population of two races: White; Some Other Race
+        H74016:      Two or More Races: Population of two races: Black or African American; American Indian and Alaska Native
+        H74017:      Two or More Races: Population of two races: Black or African American; Asian
+        H74018:      Two or More Races: Population of two races: Black or African American; Native Hawaiian and Other Pacific Islander
+        H74019:      Two or More Races: Population of two races: Black or African American; Some Other Race
+        H74020:      Two or More Races: Population of two races: American Indian and Alaska Native; Asian
+        H74021:      Two or More Races: Population of two races: American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H74022:      Two or More Races: Population of two races: American Indian and Alaska Native; Some Other Race
+        H74023:      Two or More Races: Population of two races: Asian; Native Hawaiian and Other Pacific Islander
+        H74024:      Two or More Races: Population of two races: Asian; Some Other Race
+        H74025:      Two or More Races: Population of two races: Native Hawaiian and Other Pacific Islander; Some Other Race
+        H74026:      Two or More Races: Population of three races
+        H74027:      Two or More Races: Population of three races: White; Black or African American; American Indian and Alaska Native
+        H74028:      Two or More Races: Population of three races: White; Black or African American; Asian
+        H74029:      Two or More Races: Population of three races: White; Black or African American; Native Hawaiian and Other Pacific Islander
+        H74030:      Two or More Races: Population of three races: White; Black or African American; Some Other Race
+        H74031:      Two or More Races: Population of three races: White; American Indian and Alaska Native; Asian
+        H74032:      Two or More Races: Population of three races: White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H74033:      Two or More Races: Population of three races: White; American Indian and Alaska Native; Some Other Race
+        H74034:      Two or More Races: Population of three races: White; Asian; Native Hawaiian and Other Pacific Islander
+        H74035:      Two or More Races: Population of three races: White; Asian; Some Other Race
+        H74036:      Two or More Races: Population of three races: White; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H74037:      Two or More Races: Population of three races: Black or African American; American Indian and Alaska Native; Asian
+        H74038:      Two or More Races: Population of three races: Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H74039:      Two or More Races: Population of three races: Black or African American; American Indian and Alaska Native; Some Other Race
+        H74040:      Two or More Races: Population of three races: Black or African American; Asian; Native Hawaiian and Other Pacific Islander
+        H74041:      Two or More Races: Population of three races: Black or African American; Asian; Some Other Race
+        H74042:      Two or More Races: Population of three races: Black or African American; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H74043:      Two or More Races: Population of three races: American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H74044:      Two or More Races: Population of three races: American Indian and Alaska Native; Asian; Some Other Race
+        H74045:      Two or More Races: Population of three races: American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H74046:      Two or More Races: Population of three races: Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H74047:      Two or More Races: Population of four races
+        H74048:      Two or More Races: Population of four races: White; Black or African American; American Indian and Alaska Native; Asian
+        H74049:      Two or More Races: Population of four races: White; Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H74050:      Two or More Races: Population of four races: White; Black or African American; American Indian and Alaska Native; Some Other Race
+        H74051:      Two or More Races: Population of four races: White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander
+        H74052:      Two or More Races: Population of four races: White; Black or African American; Asian; Some Other Race
+        H74053:      Two or More Races: Population of four races: White; Black or African American; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H74054:      Two or More Races: Population of four races: White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H74055:      Two or More Races: Population of four races: White; American Indian and Alaska Native; Asian; Some Other Race
+        H74056:      Two or More Races: Population of four races: White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H74057:      Two or More Races: Population of four races: White; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H74058:      Two or More Races: Population of four races: Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H74059:      Two or More Races: Population of four races: Black or African American; American Indian and Alaska Native; Asian; Some Other Race
+        H74060:      Two or More Races: Population of four races: Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H74061:      Two or More Races: Population of four races: Black or African American; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H74062:      Two or More Races: Population of four races: American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H74063:      Two or More Races: Population of five races
+        H74064:      Two or More Races: Population of five races: White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H74065:      Two or More Races: Population of five races: White; Black or African American; American Indian and Alaska Native; Asian; Some Other Race
+        H74066:      Two or More Races: Population of five races: White; Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H74067:      Two or More Races: Population of five races: White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H74068:      Two or More Races: Population of five races: White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H74069:      Two or More Races: Population of five races: Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H74070:      Two or More Races: Population of six races
+        H74071:      Two or More Races: Population of six races: White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+
+    Table 8:     Hispanic or Latino, and Not Hispanic or Latino by Race for the Population 18 Years and Over
+    Universe:    Population 18 years and over
+    Source code: P11
+    NHGIS code:  H75
+        H75001:      Total
+        H75002:      Hispanic or Latino
+        H75003:      Not Hispanic or Latino
+        H75004:      Not Hispanic or Latino: Population of one race
+        H75005:      Not Hispanic or Latino: Population of one race: White alone
+        H75006:      Not Hispanic or Latino: Population of one race: Black or African American alone
+        H75007:      Not Hispanic or Latino: Population of one race: American Indian and Alaska Native alone
+        H75008:      Not Hispanic or Latino: Population of one race: Asian alone
+        H75009:      Not Hispanic or Latino: Population of one race: Native Hawaiian and Other Pacific Islander alone
+        H75010:      Not Hispanic or Latino: Population of one race: Some Other Race alone
+        H75011:      Not Hispanic or Latino: Two or More Races
+        H75012:      Not Hispanic or Latino: Two or More Races: Population of two races
+        H75013:      Not Hispanic or Latino: Two or More Races: Population of two races: White; Black or African American
+        H75014:      Not Hispanic or Latino: Two or More Races: Population of two races: White; American Indian and Alaska Native
+        H75015:      Not Hispanic or Latino: Two or More Races: Population of two races: White; Asian
+        H75016:      Not Hispanic or Latino: Two or More Races: Population of two races: White; Native Hawaiian and Other Pacific Islander
+        H75017:      Not Hispanic or Latino: Two or More Races: Population of two races: White; Some Other Race
+        H75018:      Not Hispanic or Latino: Two or More Races: Population of two races: Black or African American; American Indian and Alaska Native
+        H75019:      Not Hispanic or Latino: Two or More Races: Population of two races: Black or African American; Asian
+        H75020:      Not Hispanic or Latino: Two or More Races: Population of two races: Black or African American; Native Hawaiian and Other Pacific Islander
+        H75021:      Not Hispanic or Latino: Two or More Races: Population of two races: Black or African American; Some Other Race
+        H75022:      Not Hispanic or Latino: Two or More Races: Population of two races: American Indian and Alaska Native; Asian
+        H75023:      Not Hispanic or Latino: Two or More Races: Population of two races: American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H75024:      Not Hispanic or Latino: Two or More Races: Population of two races: American Indian and Alaska Native; Some Other Race
+        H75025:      Not Hispanic or Latino: Two or More Races: Population of two races: Asian; Native Hawaiian and Other Pacific Islander
+        H75026:      Not Hispanic or Latino: Two or More Races: Population of two races: Asian; Some Other Race
+        H75027:      Not Hispanic or Latino: Two or More Races: Population of two races: Native Hawaiian and Other Pacific Islander; Some Other Race
+        H75028:      Not Hispanic or Latino: Two or More Races: Population of three races
+        H75029:      Not Hispanic or Latino: Two or More Races: Population of three races: White; Black or African American; American Indian and Alaska Native
+        H75030:      Not Hispanic or Latino: Two or More Races: Population of three races: White; Black or African American; Asian
+        H75031:      Not Hispanic or Latino: Two or More Races: Population of three races: White; Black or African American; Native Hawaiian and Other Pacific Islander
+        H75032:      Not Hispanic or Latino: Two or More Races: Population of three races: White; Black or African American; Some Other Race
+        H75033:      Not Hispanic or Latino: Two or More Races: Population of three races: White; American Indian and Alaska Native; Asian
+        H75034:      Not Hispanic or Latino: Two or More Races: Population of three races: White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H75035:      Not Hispanic or Latino: Two or More Races: Population of three races: White; American Indian and Alaska Native; Some Other Race
+        H75036:      Not Hispanic or Latino: Two or More Races: Population of three races: White; Asian; Native Hawaiian and Other Pacific Islander
+        H75037:      Not Hispanic or Latino: Two or More Races: Population of three races: White; Asian; Some Other Race
+        H75038:      Not Hispanic or Latino: Two or More Races: Population of three races: White; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H75039:      Not Hispanic or Latino: Two or More Races: Population of three races: Black or African American; American Indian and Alaska Native; Asian
+        H75040:      Not Hispanic or Latino: Two or More Races: Population of three races: Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H75041:      Not Hispanic or Latino: Two or More Races: Population of three races: Black or African American; American Indian and Alaska Native; Some Other Race
+        H75042:      Not Hispanic or Latino: Two or More Races: Population of three races: Black or African American; Asian; Native Hawaiian and Other Pacific Islander
+        H75043:      Not Hispanic or Latino: Two or More Races: Population of three races: Black or African American; Asian; Some Other Race
+        H75044:      Not Hispanic or Latino: Two or More Races: Population of three races: Black or African American; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H75045:      Not Hispanic or Latino: Two or More Races: Population of three races: American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H75046:      Not Hispanic or Latino: Two or More Races: Population of three races: American Indian and Alaska Native; Asian; Some Other Race
+        H75047:      Not Hispanic or Latino: Two or More Races: Population of three races: American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H75048:      Not Hispanic or Latino: Two or More Races: Population of three races: Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H75049:      Not Hispanic or Latino: Two or More Races: Population of four races
+        H75050:      Not Hispanic or Latino: Two or More Races: Population of four races: White; Black or African American; American Indian and Alaska Native; Asian
+        H75051:      Not Hispanic or Latino: Two or More Races: Population of four races: White; Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander
+        H75052:      Not Hispanic or Latino: Two or More Races: Population of four races: White; Black or African American; American Indian and Alaska Native; Some Other Race
+        H75053:      Not Hispanic or Latino: Two or More Races: Population of four races: White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander
+        H75054:      Not Hispanic or Latino: Two or More Races: Population of four races: White; Black or African American; Asian; Some Other Race
+        H75055:      Not Hispanic or Latino: Two or More Races: Population of four races: White; Black or African American; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H75056:      Not Hispanic or Latino: Two or More Races: Population of four races: White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H75057:      Not Hispanic or Latino: Two or More Races: Population of four races: White; American Indian and Alaska Native; Asian; Some Other Race
+        H75058:      Not Hispanic or Latino: Two or More Races: Population of four races: White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H75059:      Not Hispanic or Latino: Two or More Races: Population of four races: White; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H75060:      Not Hispanic or Latino: Two or More Races: Population of four races: Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H75061:      Not Hispanic or Latino: Two or More Races: Population of four races: Black or African American; American Indian and Alaska Native; Asian; Some Other Race
+        H75062:      Not Hispanic or Latino: Two or More Races: Population of four races: Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H75063:      Not Hispanic or Latino: Two or More Races: Population of four races: Black or African American; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H75064:      Not Hispanic or Latino: Two or More Races: Population of four races: American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H75065:      Not Hispanic or Latino: Two or More Races: Population of five races
+        H75066:      Not Hispanic or Latino: Two or More Races: Population of five races: White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander
+        H75067:      Not Hispanic or Latino: Two or More Races: Population of five races: White; Black or African American; American Indian and Alaska Native; Asian; Some Other Race
+        H75068:      Not Hispanic or Latino: Two or More Races: Population of five races: White; Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H75069:      Not Hispanic or Latino: Two or More Races: Population of five races: White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H75070:      Not Hispanic or Latino: Two or More Races: Population of five races: White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H75071:      Not Hispanic or Latino: Two or More Races: Population of five races: Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+        H75072:      Not Hispanic or Latino: Two or More Races: Population of six races
+        H75073:      Not Hispanic or Latino: Two or More Races: Population of six races: White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race
+
+    Table 9:     Sex by Age
+    Universe:    Total population
+    Source code: P12
+    NHGIS code:  H76
+        H76001:      Total
+        H76002:      Male
+        H76003:      Male: Under 5 years
+        H76004:      Male: 5 to 9 years
+        H76005:      Male: 10 to 14 years
+        H76006:      Male: 15 to 17 years
+        H76007:      Male: 18 and 19 years
+        H76008:      Male: 20 years
+        H76009:      Male: 21 years
+        H76010:      Male: 22 to 24 years
+        H76011:      Male: 25 to 29 years
+        H76012:      Male: 30 to 34 years
+        H76013:      Male: 35 to 39 years
+        H76014:      Male: 40 to 44 years
+        H76015:      Male: 45 to 49 years
+        H76016:      Male: 50 to 54 years
+        H76017:      Male: 55 to 59 years
+        H76018:      Male: 60 and 61 years
+        H76019:      Male: 62 to 64 years
+        H76020:      Male: 65 and 66 years
+        H76021:      Male: 67 to 69 years
+        H76022:      Male: 70 to 74 years
+        H76023:      Male: 75 to 79 years
+        H76024:      Male: 80 to 84 years
+        H76025:      Male: 85 years and over
+        H76026:      Female
+        H76027:      Female: Under 5 years
+        H76028:      Female: 5 to 9 years
+        H76029:      Female: 10 to 14 years
+        H76030:      Female: 15 to 17 years
+        H76031:      Female: 18 and 19 years
+        H76032:      Female: 20 years
+        H76033:      Female: 21 years
+        H76034:      Female: 22 to 24 years
+        H76035:      Female: 25 to 29 years
+        H76036:      Female: 30 to 34 years
+        H76037:      Female: 35 to 39 years
+        H76038:      Female: 40 to 44 years
+        H76039:      Female: 45 to 49 years
+        H76040:      Female: 50 to 54 years
+        H76041:      Female: 55 to 59 years
+        H76042:      Female: 60 and 61 years
+        H76043:      Female: 62 to 64 years
+        H76044:      Female: 65 and 66 years
+        H76045:      Female: 67 to 69 years
+        H76046:      Female: 70 to 74 years
+        H76047:      Female: 75 to 79 years
+        H76048:      Female: 80 to 84 years
+        H76049:      Female: 85 years and over
+
+    Table 10:    Group Quarters Population by Group Quarters Type
+    Universe:    Population in group quarters
+    Source code: P42
+    NHGIS code:  H80
+        H80001:      Total
+        H80002:      Institutionalized population (101-106, 201-203, 301, 401-405)
+        H80003:      Institutionalized population (101-106, 201-203, 301, 401-405): Correctional facilities for adults (101-106)
+        H80004:      Institutionalized population (101-106, 201-203, 301, 401-405): Juvenile facilities (201-203)
+        H80005:      Institutionalized population (101-106, 201-203, 301, 401-405): Nursing facilities/Skilled-nursing facilities (301)
+        H80006:      Institutionalized population (101-106, 201-203, 301, 401-405): Other institutional facilities (401-405)
+        H80007:      Noninstitutionalized population (501, 601-602, 701-702, 704, 706, 801-802, 900-901, 903-904)
+        H80008:      Noninstitutionalized population (501, 601-602, 701-702, 704, 706, 801-802, 900-901, 903-904): College/University student housing (501)
+        H80009:      Noninstitutionalized population (501, 601-602, 701-702, 704, 706, 801-802, 900-901, 903-904): Military quarters (601-602)
+        H80010:      Noninstitutionalized population (501, 601-602, 701-702, 704, 706, 801-802, 900-901, 903-904): Other noninstitutional facilities (701-702, 704, 706, 801-802, 900-901, 903-904)
+
+--------------------------------------------------------------------------------
+Citation and Use of NHGIS Data
+--------------------------------------------------------------------------------
+
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* REDISTRIBUTION: You will not redistribute the data without permission.
+
+  You may publish a subset of the data to meet journal requirements for accessing
+  data related to a particular publication. Contact us for permission for any other
+  redistribution; we will consider requests for free and commercial redistribution.
+
+* CITATION: You will cite NHGIS appropriately.
+
+    * Publications and research reports employing NHGIS data (either tabular or GIS)
+      should include the following citation:
+      
+        David Van Riper, Tracy Kugler, and Jonathan Schroeder. IPUMS NHGIS 
+        Privacy-Protected 2010 Census Demonstration Data, version 20200527 
+        [Database]. Minneapolis, MN: IPUMS. 2020.
+        https://www.nhgis.org/privacy-protected-demonstration-data
+
+
+    * For policy briefs, online resources, or articles in the popular press, we
+      recommend that you cite the use of NHGIS data as follows:
+
+        IPUMS NHGIS, University of Minnesota, www.nhgis.org.
+
+These terms of use are a legally binding agreement. You can use the data only in
+accordance with these terms, and any other use is a violation of the agreement.
+Violations may result in revocation of the agreement and prohibition from using other
+IPUMS data. If IPUMS or our partners are harmed from your violation, you are
+responsible for all damages, including reasonable attorney's fees and expenses.
+
+In addition, we request that users send us a copy of any publications, research
+reports, or educational material making use of the data or documentation.
+
+Send electronic material to: nhgis@umn.edu
+
+Printed matter should be sent to:
+
+    IPUMS NHGIS
+    Institute for Social Research and Data Innovation
+    University of Minnesota
+    50 Willey Hall
+    225 19th Ave S
+    Minneapolis, MN 55455

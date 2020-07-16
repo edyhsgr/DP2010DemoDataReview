@@ -2,7 +2,7 @@
 #US CENSUS BUREAU PRIVACY PROTECTED 2010 DEMONSTRATION DATA FOR CALIFORNIA
 #
 #DATA DOWNLOADED JULY 15, 2020 FROM IPUMS NHGIS, UNIVERSITY OF MINNESOTA: https://www.nhgis.org/privacy-protected-demonstration-data
-#THIS IS UPDATE OF https://shiny.demog.berkeley.edu/eddieh/DP2010DemoData_CA/
+#THIS IS UPDATE OF https://shiny.demog.berkeley.edu/eddieh/DP2010DemoData_CA_Oct2019/
 #
 #EDDIE HUNSINGER, JULY 2020
 #https://edyhsgr.github.io/eddieh/
@@ -20,7 +20,10 @@ ui<-fluidPage(
 
 	tags$h3("Review of U.S. Census Bureau's 2010 Demonstration Data (July 2020 release): Population by Demographic Characteristics, California Counties, Cities, and Places"),
 	p("U.S. Census Bureau data downloaded July 15, 2020 from ",
-	tags$a(href="https://www.nhgis.org/privacy-protected-demonstration-data", "IPUMS NHGIS, University of Minnesota."),
+	tags$a(href="https://www.nhgis.org/privacy-protected-demonstration-data", "IPUMS NHGIS, University of Minnesota.")),
+	p("Update of ",
+	tags$a(href="https://shiny.demog.berkeley.edu/eddieh/DP2010DemoData_CA_Oct2019/", "October 2019."),
+	"",
 	"",
 	tags$a(href="", 
 	"")

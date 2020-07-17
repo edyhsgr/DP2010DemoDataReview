@@ -1,5 +1,5 @@
 ##########
-#US CENSUS BUREAU PRIVACY PROTECTED 2010 DEMONSTRATION DATA FOR AMERICAN INDIAN, ALASKA NATIVE, NATIVE HAWAIIAN AREAS
+#US CENSUS BUREAU PRIVACY PROTECTED 2010 DEMONSTRATION DATA FOR AMERICAN INDIAN, ALASKA NATIVE, AND NATIVE HAWAIIAN AREAS
 #
 #DATA DOWNLOADED JULY 16, 2020 FROM IPUMS NHGIS, UNIVERSITY OF MINNESOTA: https://www.nhgis.org/privacy-protected-demonstration-data
 #THIS IS FOLLOWING https://shiny.demog.berkeley.edu/eddieh/DP2010DemoData_CA_Jul2020/
@@ -18,7 +18,7 @@ Names<-Data$name
 
 ui<-fluidPage(
 
-	tags$h3("U.S. Census Bureau's 2010 Demonstration Data (July 2020 release): Population by Demographic Characteristics, American Indian, Alaska Native, Native Hawaiian (AIANNH) Areas"),
+	tags$h3("U.S. Census Bureau's 2010 Demonstration Data (July 2020 release): Population by Demographic Characteristics, American Indian, and Alaska Native, Native Hawaiian (AIANNH) Areas"),
 	p("U.S. Census Bureau data downloaded July 16, 2020 from ",
 	tags$a(href="https://www.nhgis.org/privacy-protected-demonstration-data", "IPUMS NHGIS, University of Minnesota.")),
 	p("Data viewer following ",

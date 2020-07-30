@@ -1,4 +1,4 @@
-# DP2010DemoDataReview_CA
+# DP2010DemoDataReview
 Viewing US Census Bureau Differential Privacy 2010 Demonstration Data, using Shiny for R
 
 -----

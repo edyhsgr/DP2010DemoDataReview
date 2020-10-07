@@ -2,7 +2,7 @@
 #US CENSUS BUREAU PRIVACY PROTECTED 2010 DEMONSTRATION DATA FOR CALIFORNIA
 #
 #DATA DOWNLOADED JULY 15, 2020 FROM IPUMS NHGIS, UNIVERSITY OF MINNESOTA: https://www.nhgis.org/privacy-protected-demonstration-data
-#THIS IS UPDATE OF https://shiny.demog.berkeley.edu/eddieh/DP2010DemoData_CA_Oct2019/
+#THIS IS UPDATE OF https://shiny.demog.berkeley.edu/DP2010DemoData_CA_Oct2019/
 #
 #EDDIE HUNSINGER, JULY 2020
 #https://edyhsgr.github.io/eddieh/

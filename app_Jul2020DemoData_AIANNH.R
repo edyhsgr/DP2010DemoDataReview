@@ -5,7 +5,7 @@
 #THIS IS FOLLOWING https://shiny.demog.berkeley.edu/eddieh/DP2010DemoData_CA_Jul2020/
 #
 #EDDIE HUNSINGER, JULY 2020
-#https://edyhsgr.github.io/eddieh/
+#https://edyhsgr.github.io/
 #
 #THERE IS NO WARRANTY FOR THIS CODE
 #THIS CODE HAS NOT BEEN TESTED AT ALL-- PLEASE LET ME KNOW IF YOU FIND ANY PROBLEMS (edyhsgr@gmail.com)

@@ -49,7 +49,7 @@
 library(shiny)
 
 Names<-read.table(file="https://github.com/edyhsgr/DP2010DemoDataReview/raw/master/nhgis_ppdd_20200527_place_county_names_CA.csv",header=TRUE,sep=",")
-Names<-PopData$name
+Names<-Names$name
 
 ui<-fluidPage(
 

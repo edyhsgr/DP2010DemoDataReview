@@ -156,7 +156,7 @@ mtext(side=1,line=-55,at=0,text=paste(c("Population by Age and Sex, ", input$Are
 legend(max(as.matrix(AgeMale[19:36]))*1.85, 18, legend=c("2010 Census Data with Differential Privacy","Published 2010 Census Data"), col=c(fill_color,rgb(0,1,1,0)),border=rgb(0,0,0,0), pt.cex=2, pch=15, cex=1.5, bty ="n", y.intersp=1.25)
 legend(max(as.matrix(AgeMale[19:36]))*1.85, 18, legend=c("",""), col=c(fill_color, rgb(0,0,0)), pt.cex=2, pch=0, cex=1.5, bty ="n", y.intersp=1.25)
 
-mtext(side=1,line=6,adj=0,text=paste(c("Source: U.S. Census Bureau's 2010 Demonstration Data (March 2022 release). Published 2010 Census data accessed via IPUMS NHGIS, University of Minnesota, July 2020."),collapse=""),font=.5,cex=1)
+mtext(side=1,line=6,adj=0,text=paste(c("Source: U.S. Census Bureau's 2010 Demonstration Data (March 2022 release). Published 2010 Census data accessed via IPUMS NHGIS, July 2020."),collapse=""),font=.5,cex=1)
 
 barplot(as.matrix(AgeFemale[37:54]),horiz=T,names.arg=array("",18),space=0,xlim=c(0,max(as.matrix(AgeMale[19:36]))*2),las=1,col=fill_color,border=rgb(0,0,0,0))
   par(new=TRUE)

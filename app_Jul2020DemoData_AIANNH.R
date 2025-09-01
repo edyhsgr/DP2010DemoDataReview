@@ -2,7 +2,7 @@
 #US CENSUS BUREAU PRIVACY PROTECTED 2010 DEMONSTRATION DATA FOR AMERICAN INDIAN, ALASKA NATIVE, AND NATIVE HAWAIIAN AREAS
 #
 #DATA DOWNLOADED JULY 16, 2020 FROM IPUMS NHGIS, UNIVERSITY OF MINNESOTA: https://www.nhgis.org/privacy-protected-demonstration-data
-#THIS IS FOLLOWING https://shiny.demog.berkeley.edu/eddieh/DP2010DemoData_CA_Jul2020/
+#THIS IS FOLLOWING https://github.com/edyhsgr/DP2010DemoDataReview/blob/master/app_Jul2020DemoData_CA.R 
 #
 #EDDIE HUNSINGER, JULY 2020
 #https://edyhsgr.github.io/
@@ -22,7 +22,7 @@ ui<-fluidPage(
 	p("U.S. Census Bureau data downloaded July 16, 2020 from ",
 	tags$a(href="https://www.nhgis.org/privacy-protected-demonstration-data", "IPUMS NHGIS, University of Minnesota.")),
 	p("Data viewer following ",
-	tags$a(href="https://shiny.demog.berkeley.edu/eddieh/DP2010DemoData_CA_Jul2020/", "format here."),
+	tags$a(href="https://github.com/edyhsgr/DP2010DemoDataReview/blob/master/app_Jul2020DemoData_CA.R", "format here."),
 	"",
 	"",
 	tags$a(href="", 
@@ -141,3 +141,4 @@ legend("left",legend=rev(c("White, not Hispanic","Black, not Hispanic","American
 }
 
 shinyApp(ui = ui, server = server)
+

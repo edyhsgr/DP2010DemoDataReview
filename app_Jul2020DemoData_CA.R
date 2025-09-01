@@ -2,7 +2,7 @@
 #US CENSUS BUREAU PRIVACY PROTECTED 2010 DEMONSTRATION DATA FOR CALIFORNIA
 #
 #DATA DOWNLOADED JULY 15, 2020 FROM IPUMS NHGIS, UNIVERSITY OF MINNESOTA: https://www.nhgis.org/privacy-protected-demonstration-data
-#THIS IS UPDATE OF https://shiny.demog.berkeley.edu/DP2010DemoData_CA_Oct2019/
+#THIS IS UPDATE OF https://applieddemogtoolbox.shinyapps.io/Oct2019DemoData_CA/
 #
 #EDDIE HUNSINGER, JULY 2020
 #https://edyhsgr.github.io/
@@ -22,7 +22,7 @@ ui<-fluidPage(
 	p("U.S. Census Bureau data downloaded July 15, 2020 from ",
 	tags$a(href="https://www.nhgis.org/privacy-protected-demonstration-data", "IPUMS NHGIS, University of Minnesota.")),
 	p("Update of ",
-	tags$a(href="https://shiny.demog.berkeley.edu/eddieh/DP2010DemoData_CA_Oct2019/", "October 2019."),
+	tags$a(href="https://applieddemogtoolbox.shinyapps.io/Oct2019DemoData_CA/", "October 2019."),
 	"",
 	"",
 	tags$a(href="", 
@@ -141,3 +141,4 @@ legend("left",legend=rev(c("White, not Hispanic","Black, not Hispanic","American
 }
 
 shinyApp(ui = ui, server = server)
+
